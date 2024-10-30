@@ -43,6 +43,47 @@ one_drive <- file.path(user_profile, "OneDrive",
                        "Documents", "GitHub", "Wild_mice_immune_cells")
 
 
+## Define within project file paths ----
+# code
+c <- "code"
+clab      <- paste0(c, "/lab/")
+cfield     <- paste0(c, "/field/")
+canalysis <- paste0(c, "/analysis/")
+cdesign <- paste0(c, "/design/") # experimental project design
+nmi   <- paste0(c, "/nmi/")
+cmodels <- paste0(c, "/models/")
+
+
+# relative_path is the desired path
+d <- paste0(one_drive, "/data")
+
+# labs
+dlab <- paste0(d, "/lab")
+dlab_raw <- paste0(dlab, "/raw")
+dlab_inter <- paste0(dlab, "/intermediate")
+dlab_final <- paste0(dlab, "/final")
+
+# field
+dfield <- paste0(d, "/field")
+dfield_raw <- paste0(dfield, "/raw")
+dfield_inter <- paste0(dfield, "/intermediate")
+dfield_final <- paste0(dfield, "/final")
+
+
+# data product for analysis
+danalysis <- paste0(d, "/analysis")
+danal_final <- paste0(danalysis, "/final") 
+
+# output
+output <- paste0(one_drive, "/output")
+figures <- paste0(output, "/figures")
+fi <- paste0(figures, "/imputation")
+an_fi <- paste0(figures, "/analysis")
+d_fi <- paste0(figures, "/design")
+panels_fi <- paste0(figures, "/panels")
+tables  <- paste0(output, "/tables")
+
+
 # ***********************************************************
 # Part 2: Run Data cleaning                         ----
 # ***********************************************************
@@ -138,29 +179,3 @@ if (0) source(file.path(cdesign, "design_experimental.R"))
 #  contr_PC1, contr_PC2
 #----------------------------------------------------------*
 if (0) source(file.path(canalysis, "analysis_PCA_genes_lab.R"))
-# 6.2: PCA 
-# Regressions with pc axes 
-# Plots: pc1_current_infection, pc2_current_infection, coefs5
-#----------------------------------------------------------*
-if (0) source(file.path(canalysis, "analysis_linear_regressions_PCA.R"))
-#----------------------------------------------------------*
-# 6.2: Heatmap lab genes
-# Requires: previous script!!!
-#----------------------------------------------------------*
-if (0) source(file.path(canalysis, "heatmap_lab_genes.R"))
-#----------------------------------------------------------*
-# 6.3: Multiple multivariate regression of genes vs weight loss in the lab
-# Requires: hm, lab
-#----------------------------------------------------------*
-if (0) source(file.path(canalysis, "analysis_multiple_multivariate_regression.R"))
-#----------------------------------------------------------*
-# 6.4: Multiple multivariate regression of genes vs weight loss in the field infections
-# Requires: hm, field
-#----------------------------------------------------------*
-if (0) source(file.path(canalysis, "analysis_multiple_multivariate_regression_field.R"))
-
-
-# ***********************************************************
-# Part 7: Analysis                           ----
-# ***********************************************************
-#----------------------------------------------------------*
